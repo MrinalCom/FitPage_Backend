@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "npx prisma generate",
     "start": "node server.js",
-    "postinstall": "prisma generate",
-    "seed": "node prisma/seed.js"
+    "postinstall": "npm run prepare && npx prisma db push && node prisma/seed.js"
   },
   "keywords": [],
   "author": "",
